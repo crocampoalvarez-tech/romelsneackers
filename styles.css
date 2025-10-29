@@ -1,0 +1,255 @@
+/* --- Paleta de Colores HSL y Variables Globales (Inspirada en tu imagen) --- */
+:root {
+    /* HUE: 210° es un gris/azul muy frío, perfecto para un fondo oscuro elegante. */
+    --color-hue: 210;
+
+    /* PALETA PRINCIPAL (Grises/Azules fríos) */
+    --color-fondo: hsl(var(--color-hue), 10%, 8%);         
+    --color-principal-oscuro: hsl(var(--color-hue), 15%, 15%);
+    --color-medio: hsl(var(--color-hue), 12%, 30%);
+    --color-claro: hsl(var(--color-hue), 10%, 75%);
+    --color-muy-claro: hsl(var(--color-hue), 5%, 95%);
+
+    /* COLORES DE ACENTO */
+    --color-acento-lujo: hsl(0, 80%, 45%);
+    --color-acento-exito: hsl(130, 60%, 40%);
+    --color-acento-secundario: hsl(var(--color-hue), 10%, 55%);
+
+    /* Tipografía */
+    --fuente-principal: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* --- Estilos Base y Reseteo --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-fondo); 
+    color: var(--color-claro);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+}
+
+/* --- Títulos --- */
+h1 {
+    color: var(--color-acento-lujo);
+    border-bottom: 2px solid currentColor; 
+    padding-bottom: 0.5rem;
+    font-weight: 700;
+}
+h2, h3, h4, h5, h6 {
+    color: var(--color-claro); 
+}
+
+/* --- Párrafos y Listas --- */
+p, li {
+    font-size: 1.1rem;
+    color: var(--color-claro);
+}
+
+/* --- Enlaces y botones --- */
+a {
+    color: var(--color-acento-lujo);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+a:hover {
+    color: var(--color-muy-claro); 
+}
+
+/* NAVBAR */
+.navbar {
+    background-color: var(--color-principal-oscuro) !important; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+.navbar .nav-link,
+.navbar-brand span {
+    color: var(--color-muy-claro) !important;
+}
+
+/* BOTONES (Aplicando HSL a las clases de Bootstrap) */
+.btn-dark {
+    background-color: var(--color-principal-oscuro); 
+    border-color: var(--color-medio);
+    color: var(--color-muy-claro);
+}
+.btn-dark:hover {
+    background-color: var(--color-medio); 
+    border-color: var(--color-claro);
+}
+.btn-outline-success {
+    --bs-btn-color: var(--color-acento-lujo);
+    --bs-btn-border-color: var(--color-acento-lujo);
+    --bs-btn-hover-color: var(--color-principal-oscuro);
+    --bs-btn-hover-bg: var(--color-acento-lujo);
+    --bs-btn-hover-border-color: var(--color-acento-lujo);
+}
+.btn-success {
+    background-color: var(--color-acento-lujo);
+    border-color: var(--color-acento-lujo);
+}
+.btn-success:hover {
+    background-color: hsl(0, 80%, 35%);
+}
+.btn-outline-secondary {
+    --bs-btn-color: var(--color-acento-secundario);
+    --bs-btn-border-color: var(--color-acento-secundario);
+}
+
+/* CARDS, MODALES y FONDOS */
+.card,
+.modal-content,
+.accordion-item,
+.form-control,
+.form-select,
+.table-responsive {
+    background-color: var(--color-principal-oscuro);
+    border: 1px solid var(--color-medio);
+    color: var(--color-claro);
+}
+.card-header,
+.card-footer {
+    background-color: var(--color-fondo);
+    border-color: var(--color-medio);
+}
+.modal-header,
+.modal-footer {
+    border-color: var(--color-medio);
+}
+.form-control,
+.form-select {
+    color: var(--color-muy-claro);
+}
+.form-control:focus,
+.form-select:focus {
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-muy-claro);
+    border-color: var(--color-acento-lujo);
+    box-shadow: 0 0 0 0.25rem hsla(0, 80%, 45%, 0.25);
+}
+
+/* TABLAS */
+.table {
+    --bs-table-bg: var(--color-principal-oscuro); 
+    --bs-table-color: var(--color-claro);
+    --bs-table-striped-bg: hsl(var(--color-hue), 10%, 12%);
+    --bs-table-hover-bg: hsl(var(--color-hue), 10%, 20%);
+}
+.table-dark {
+    --bs-table-bg: var(--color-fondo);
+    --bs-table-color: var(--color-acento-lujo);
+    --bs-table-border-color: var(--color-medio);
+}
+
+/* ACCORDION */
+.accordion-button {
+    background-color: var(--color-principal-oscuro);
+    color: var(--color-claro);
+}
+.accordion-button:not(.collapsed) {
+    color: var(--color-acento-lujo);
+    background-color: var(--color-fondo);
+    box-shadow: none;
+    border-bottom: 1px solid var(--color-acento-lujo);
+}
+.accordion-body {
+    background-color: hsl(var(--color-hue), 10%, 12%);
+}
+
+/* PILLS NAV */
+.nav-pills .nav-link {
+    background-color: var(--color-medio);
+    color: var(--color-claro);
+    border: 1px solid var(--color-medio);
+}
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+    background-color: var(--color-acento-lujo);
+    color: var(--color-muy-claro);
+    border-color: var(--color-acento-lujo);
+}
+
+/* === 🛒 CARRITO DE COMPRAS FIJO === */
+#carrito {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: 230px;
+    background-color: var(--color-principal-oscuro);
+    border: 1px solid var(--color-medio);
+    border-radius: 10px;
+    padding: 12px;
+    z-index: 1050;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    color: var(--color-muy-claro);
+}
+
+#carrito h5 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-acento-lujo);
+}
+
+#listaCarrito {
+    max-height: 180px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#listaCarrito li {
+    background-color: hsl(var(--color-hue), 15%, 20%);
+    border-radius: 6px;
+    margin-bottom: 4px;
+    padding: 6px;
+    font-size: 0.9rem;
+}
+
+#btnAgregar, #btnEliminar {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border-radius: 5px;
+}
+
+#mensajeCarrito {
+    color: var(--color-acento-secundario);
+}
+
+/* ====== BOTÓN FLOTANTE WHATSAPP ====== */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px; 
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  z-index: 1055;    
+  text-decoration: none;
+  transition: transform .2s ease, background-color .2s ease;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus {
+  background-color: #20b954;
+  transform: scale(1.08);
+  outline: none;
+}
+
+@media (max-width: 575.98px) {
+  footer { padding-bottom: 84px; } 
+}
